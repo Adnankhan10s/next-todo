@@ -26,7 +26,7 @@ const TopicsList = async() => {
 
  
   <div className='p-4 my-3 border border-slate-600  flex justify-between gap-5 items-start '>
-    <div>
+    <div key={t}>
 
     <h2 className='font-bold text-2xl'>{t.title}</h2>
     <div>{t.description}</div>
