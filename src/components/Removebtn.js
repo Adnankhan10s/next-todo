@@ -1,4 +1,5 @@
 "use client"
+import axios from "axios";
 import { useRouter } from "next/navigation"
 import { HiOutlineTrash } from "react-icons/hi"
 const Removebtn = ({id}) => {
@@ -6,16 +7,14 @@ const Removebtn = ({id}) => {
   const removeTopic=async()=>{
     const confirmed = confirm("Are You Sure !")
     if(confirmed){
-      const res = await fetch(`http://localhost:3000/api/topics?id=${id}`,{
-        method:"DELETE",
-      });
+      const res = await axios.delete(`/api/topics?id=${id}`)
       if (res.ok){
         router.refresh();
       }
     }
   }
 
-
+ 
   return (
      <>
      <button onClick={removeTopic} className="text-red-400">

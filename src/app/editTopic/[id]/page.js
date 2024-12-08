@@ -1,11 +1,10 @@
 import EditTopicForm from '@/components/EditTopicForm'
+import axios from 'axios';
 
 const getTopicById= async (id)=>
 {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${id}`,{
-      cache:"no-store",
-    });
+    const res = await axios.get(`/api/topics/${id}`)
     if(!res.ok){
       throw new Error("Failed to Fetch Topic");
     }

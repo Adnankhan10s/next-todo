@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react'
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 export default function AddTopic (){
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -14,13 +15,8 @@ export default function AddTopic (){
       return;
     }
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ title, description }),
-      });
+      const res = await axios.post('/api/topics') 
+       
       if (res.ok) {
         router.push("/");
       }
@@ -32,6 +28,7 @@ export default function AddTopic (){
     }
 
   };
+ 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
       <input
