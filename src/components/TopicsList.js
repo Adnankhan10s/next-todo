@@ -20,7 +20,7 @@ try {
 const TopicsList = async() => {
   const {topics} = await getTopics();
   return (
-  <>
+  <div>
  <div className="p-4 my-3 border border-slate-600  flex justify-between gap-5 items-start">
   {topics.map((index,t)=>(
     <div key={index}>
@@ -37,7 +37,7 @@ const TopicsList = async() => {
 
    ))}
     </div>
-  </>
+     </div>
   )
 }
 
