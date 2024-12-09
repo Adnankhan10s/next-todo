@@ -21,11 +21,11 @@ const TopicsList = async() => {
   const {topics} = await getTopics();
   return (
   <>
-  {topics.map((t)=>(
+  {topics.map((index,t)=>(
 
  
   <div className='p-4 my-3 border border-slate-600  flex justify-between gap-5 items-start '>
-    <div key={t}>
+    <div key={index}>
 
     <h2 className='font-bold text-2xl'>{t.title}</h2>
     <div>{t.description}</div>
