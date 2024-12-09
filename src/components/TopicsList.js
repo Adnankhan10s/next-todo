@@ -21,10 +21,8 @@ const TopicsList = async() => {
   const {topics} = await getTopics();
   return (
   <>
+ <div className='p-4 my-3 border border-slate-600  flex justify-between gap-5 items-start '>
   {topics.map((index,t)=>(
-
- 
-  <div className='p-4 my-3 border border-slate-600  flex justify-between gap-5 items-start '>
     <div key={index}>
 
     <h2 className='font-bold text-2xl'>{t.title}</h2>
@@ -36,9 +34,9 @@ const TopicsList = async() => {
       <HiPencilAlt  size={24}/>
       </Link>
     </div>
-  </div>
+
    ))}
-  
+    </div>
   </>
   )
 }
